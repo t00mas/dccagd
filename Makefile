@@ -31,7 +31,6 @@ build-debug-app: clean # Build the application ready for debugging
 	@echo "$$MSGBUILD"
 	@mkdir -p $(BUILD_DIR)
 	CGO_ENABLED=0 go install github.com/go-delve/delve/cmd/dlv@latest
-	which dlv
 	CGO_ENABLED=0 go build -gcflags "all=-N -l" -o $(BUILD_DIR)/app .
 
 define MSGCLEAN
