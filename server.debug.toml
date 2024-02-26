@@ -1,0 +1,9 @@
+root = "."
+tmp_dir = "tmp"
+
+[build]
+  args_bin = []
+  bin = "/usr/bin/ls -la && /go/bin/dlv exec --accept-multiclient --log --log-output=debugger,debuglineerr,gdbwire,lldbout,rpc --headless --continue --listen :2345 --api-version 2 ./dist/app"
+  cmd = "make build-debug-app"
+  include_dir = ["pkg"]
+  include_file = ["go.mod", "go.sum", "main.go"]

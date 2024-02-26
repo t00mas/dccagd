@@ -1,0 +1,18 @@
+version: '3'
+services:
+  my-app:
+    container_name: my-app
+    image: cosmtrek/air
+    command: -c ./server.toml
+    working_dir: /app
+    volumes:
+      - .:/app
+    networks:
+    - my_network
+    ports:
+      - 8080:8080
+      - 2345:2345
+    
+networks:
+  my_network:
+    name: my_network

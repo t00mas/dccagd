@@ -1,0 +1,9 @@
+root = "."
+tmp_dir = "tmp"
+
+[build]
+  args_bin = []
+  bin = "dist/app"
+  cmd = "make build-app"
+  include_dir = ["pkg"]
+  include_file = ["go.mod", "go.sum", "main.go"]
